@@ -9,10 +9,12 @@ class trueTopPostsWidget extends WP_Widget{
         );
     }
 
+
     /*
      * фронтэнд виджета
      */
     public function widget( $arg, $instance ) {
+        wp_enqueue_style('jquery-ui');
         wp_enqueue_script('myScript');
         $title = apply_filters( 'widget_title', $instance['title'] ); // к заголовку применяем фильтр (необязательно)
         echo $arg['before_widget'];
